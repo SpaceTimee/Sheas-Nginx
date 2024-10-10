@@ -123,7 +123,7 @@ public partial class MainWin : Window
                     continue;
 
                 string dnsName = hostConf.Trim().TrimStart("127.0.0.1".ToCharArray()).TrimStart();
-                int commentStartIndex = hostConf.IndexOf('#');
+                int commentStartIndex = dnsName.IndexOf('#');
 
                 if (commentStartIndex != -1)
                     dnsName = dnsName.Remove(commentStartIndex).TrimEnd();

@@ -31,6 +31,7 @@
     <ErrorReport>none</ErrorReport>
     <AppDesignerFolder>Props</AppDesignerFolder>
     <ApplicationManifest>Props\App.manifest</ApplicationManifest>
+    <ApplicationIcon>Sheas-Nginx-Logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -40,6 +41,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+    <None Remove="README.md" />
+    <None Remove="Sheas-Nginx-Logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />

@@ -25,8 +25,8 @@ public partial class MainWin : Window
     private static string? NginxTempPath;
     private static string? NginxCertPath;
     private static string? NginxKeyPath;
-    private static readonly string HostsPath = Path.Combine(Registry.LocalMachine.OpenSubKey(@"\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\DataBasePath")?.GetValue("DataBasePath", null)?.ToString() ?? @"C:\Windows\System32\drivers\etc", "hosts");
     private static string? HostsConfPath;
+    private static readonly string HostsPath = Path.Combine(Registry.LocalMachine.OpenSubKey(@"\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\DataBasePath")?.GetValue("DataBasePath", null)?.ToString() ?? @"C:\Windows\System32\drivers\etc", "hosts");
     private static bool IsNginxRunning = false;
 
     public MainWin() => InitializeComponent();
@@ -37,16 +37,16 @@ public partial class MainWin : Window
         {
             NginxTimer.Tick += NginxTimer_Tick;
             NginxTimer.Start();
-
-            string nginxPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "nginx.exe");
-            string hostsPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "hosts");
-
-            if (File.Exists(nginxPath))
-                NginxPathBox.Text = nginxPath;
-
-            if (File.Exists(hostsPath))
-                HostsPathBox.Text = hostsPath;
         });
+
+        string nginxPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "nginx.exe");
+        string hostsPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "hosts");
+
+        if (File.Exists(nginxPath))
+            NginxPathBox.Text = nginxPath;
+
+        if (File.Exists(hostsPath))
+            HostsPathBox.Text = hostsPath;
     }
     private void MainWin_Closing(object sender, CancelEventArgs e) => Application.Current.Shutdown();
 

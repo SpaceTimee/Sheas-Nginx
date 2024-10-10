@@ -152,7 +152,7 @@ public partial class MainWin : Window
             foreach (Process nginxProcess in Process.GetProcessesByName(Path.GetFileNameWithoutExtension(NginxPath)))
             {
                 nginxProcess.Kill();
-                nginxProcess.WaitForExit();
+                await nginxProcess.WaitForExitAsync();
             }
     }
 

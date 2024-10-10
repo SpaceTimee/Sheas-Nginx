@@ -3,7 +3,7 @@
 </br>
 
 ## 自我介绍
-**Sheas Nginx**: 一只基于 **WPF(.Net8)** 的 [Pixiv Nginx](https://github.com/mashirozx/Pixiv-Nginx) 启动器
+**Sheas Nginx**: 一只基于 **WPF(.Net8)** 的 [Pixiv Nginx](https://github.com/mashirozx/Pixiv-Nginx) 启动器 ([Sheas Cealer](https://github.com/SpaceTimee/Sheas-Cealer) 子项目)
 
 * 适用平台: Windows x64
 
